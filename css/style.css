@@ -67,6 +67,18 @@ div:hover
     block-size:350px;
     border-radius: 45px;
 }
+a[name="Warrior"] {
+    opacity: .85;
+    background-image: url("../images/warrior_image.png");
+    background-position: center;
+    background-size:cover;
+  }
+a[name="Warrior"]:hover
+{
+    transition: .0.5s;
+    background-image: url("../images/test.gif");
+    opacity: 1;
+}
 footer
 {
     background-color: #242424;
