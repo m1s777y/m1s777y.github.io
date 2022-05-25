@@ -1,16 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    }
-body
+    transition: 0.25s;
+  }
+
+
+/* главный враппер епт*/ 
+.wrapper
 {
     background-image: url("../images/background.jpg");
     background-repeat:no-repeat;
     background-position:center;
     background-size: cover;
-    background-attachment: fixed
+    background-attachment: fixed;
 }
-.nav-classes-button  /* кнопка спеков без анимации */
+
+/* верхняя кнопка спеков без анимации */
+.nav-classes-button
 {
     font-size:16px;
     background-color:#a5a5a5;
@@ -18,8 +24,7 @@ body
     display:inline-block;
     width: 6%;
     border-radius: 15px;
-    opacity:.5;
-    transition:.1s;
+    opacity:.2;
     text-align: center;
 }
 .nav-classes-button:hover
@@ -30,6 +35,9 @@ body
 {
     text-align: center;
 }
+
+
+/*инфа о сайте*/
 .main_block
 {
     text-align:center;
@@ -41,8 +49,10 @@ body
     margin:1% 30% 1% 30%;
     border-radius: 10px;
     opacity:.93;
-    transition: .0.5s;
 }
+
+
+
 div:hover
 {
     opacity:1;
@@ -57,6 +67,9 @@ div:hover
     text-decoration: none;
     color: #FFFFFF;
   }
+
+
+/*кнопка с гифкой спеков*/
 .nav-classes-block-button
 {
     display:inline-block;
@@ -67,18 +80,25 @@ div:hover
     block-size:350px;
     border-radius: 45px;
 }
-a[name="Warrior"] {
+/* tag a*/
+a
+{
     opacity: .85;
-    background-image: url("../images/warrior_image.png");
     background-position: center;
     background-size:cover;
+}
+a:hover
+{
+    opacity: 1;
+}
+a[name="Warrior"] {
+    background-image: url("../images/warrior_image.png");
   }
 a[name="Warrior"]:hover
 {
-    transition: .0.5s;
     background-image: url("../images/test.gif");
-    opacity: 1;
 }
+/* tag a*/
 footer
 {
     background-color: #242424;
@@ -87,4 +107,8 @@ footer
     bottom: 0;
     text-align:left;
     text-decoration: none;
+}
+p
+{
+    display:inline-block;
 }
