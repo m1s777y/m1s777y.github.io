@@ -84,7 +84,7 @@ img
   text-align: center;
   font-size: small;
   color:#ffffff;
-  height:50px;
+  height:min-content;
   margin:5px;
   width: 100px;
 }
