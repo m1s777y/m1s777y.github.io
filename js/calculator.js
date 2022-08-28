@@ -36,6 +36,44 @@ const masterycoef = {
   "deathknight-frostD": "2",
   "deathknight-unholy": "1.7999999"
 };
+const bonuscritical = {
+  "warrior-arms": "5",
+  "warrior-fury": "5",
+  "warrior-protection": "5",
+  "hunter-marksmanship": "10",
+  "hunter-beastmastery": "10",
+  "hunter-survival": "10",
+  "priest-discipline": "0",
+  "priest-holy": "0",
+  "priest-shadow": "0",
+  "mage-arcane": "0",
+  "mage-fire": "0",
+  "mage-frost": "0",
+  "monk-brewmaster": "10",
+  "monk-mistweaver": "10",
+  "monk-windwalker": "10",
+  "demonhunter-havoc": "10",
+  "demonhunter-vengeance": "10",
+  "paladin-holy": "0",
+  "paladin-retribution": "5",
+  "paladin-protection": "5",
+  "rogue-assasination": "10",
+  "rogue-subtlety": "10",
+  "rogue-outlaw": "10",
+  "shaman-elemental": "0",
+  "shaman-enhancement": "10",
+  "shaman-restoration": "0",
+  "warlock-affliction": "0",
+  "warlock-demonology": "0",
+  "warlock-destruction": "0",
+  "druid-balance": "0",
+  "druid-feral": "10",
+  "druid-restoration": "0",
+  "druid-guardian": "10",
+  "deathknight-blood": "5",
+  "deathknight-frost": "5",
+  "deathknight-unholy": "5"
+};
 let RatioStats = [[0, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, 3.091154721, //0-10 Vers
 3.091154721, 3.245712457, 3.400270193, 3.554827929, 3.709385665, 3.863943401, 4.018501137, 4.173058873, 4.327616609, 4.482174345, //11-20 Vers
 4.636732081, 4.791289817, 4.945847553, 5.100405289, 5.254963025, 5.414083305, 5.579537691, 5.751610634, 5.930600757, 6.11682162, //21-30 Vers
@@ -106,11 +144,21 @@ function selectSpec(e)
       el[i].style.display = "none";
     }
   }
-  document.getElementById("MasteryResult").value = 8.00*masterycoef[mastery] + "%";        
+  document.getElementById("MasteryResult").value = (8.00*masterycoef[mastery]).toFixed(2) + "%";   
+  document.getElementById("CriticalResult").value = parseInt(bonuscritical[mastery]).toFixed(2) + "%";  
 }
 function inputStats(id)
 {
-  var stat = Number(event.target.value);
+  var stat = Number(document.getElementById(id).value);
+  if(id == "Level")
+  {
+    inputStats('Versatility');
+    inputStats('Critical');
+    inputStats('Haste');
+    inputStats('Mastery');
+    calculatespells();
+    return;
+  }
   var temp;
   var Lvl = Number(document.getElementById('Level').value);
   switch(id){
@@ -171,7 +219,9 @@ function inputStats(id)
   if (id == 'Mastery')
     result = (result+8)*masterycoef[mastery];
   if(id == "Critical")
-    result +=10;
+  {
+    result += parseInt(bonuscritical[mastery]); 
+  }
   id = id + "Result";
   flag = false;
   document.getElementById(id).value = result.toFixed(2) + "%";

@@ -12,7 +12,7 @@
 <body>
     <div class = "wrapper">
       <div class = "header">
-        <a href = "../index.html" style = "color:#ffffff">SpellCalculator</a>
+        <a href = "index.html" style = "color:#ffffff">SpellCalculator</a>
         <div class = "header-right">
           <a href = https://xpoff.com/members/m1s777y.46308/ style = "color:#ffffff">Author</a>
           <a href = "faq.html" style = "color:#ffffff">F.A.Q</a>
@@ -30,7 +30,7 @@
             <div class = "Input">
               <div class = "InputField">
                 <label for="Level">Level:</label>
-                <input type = "number" id = "Level" name = "Level" value = "1" min = "1" max = "60" oninput="calculatespells()" onchange="inputStats(this.id)">
+                <input type = "number" id = "Level" name = "Level" value = "1" min = "1" max = "60" oninput="calculatespells();inputStats(this.id)" onchange="inputStats(this.id)">
               </div>
               <div class = "InputField">
                 <label for="AttackPower">Attack Power:</label>
@@ -67,16 +67,16 @@
                 <input type = "number" id = "OHDPS" name = "OHDPS" value = "0" min = "0" oninput = "calculatespells();">
               </div>
               <div class = "InputField" style = "text-align: left;">
-                <input type = "text" id = "CriticalResult" name = "CriticalResult" disabled value = "10.00%"max = "120.00%">
+                <input type = "text" id = "CriticalResult" name = "CriticalResult" disabled value = "0.00%"max = "120.00%" onformchange="calculatespells()">
               </div>
               <div class = "InputField" style = "text-align: left;">
-                <input type = "text" id = "HasteResult" name = "HasteResult" disabled value = "0.00%">
+                <input type = "text" id = "HasteResult" name = "HasteResult" disabled value = "0.00%" onchange="calculatespells()">
               </div>
               <div class = "InputField" style = "text-align: left;">
-                <input type = "text" id = "VersatilityResult" name = "VersatilityResult" disabled value = "0.00%">
+                <input type = "text" id = "VersatilityResult" name = "VersatilityResult" disabled value = "0.00%" onchange="calculatespells()">
               </div>
               <div class = "InputField" style = "text-align: left;">
-                <input type = "text" id = "MasteryResult" name = "MasteryResult" disabled value = "0.00%">
+                <input type = "text" id = "MasteryResult" name = "MasteryResult" disabled value = "0.00%" onchange="calculatespells()">
               </div>
             </div> 
           </div>
@@ -253,6 +253,13 @@
                   <input type = "text" id = "shockwave" name = "shockwave" disabled value = "0.00">
                 </div>
                 <label>Shockwave</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/mastery arms.webp" alt = "deepwounds"/>
+                  <input type = "text" id = "deepwounds" name = "deepwounds" disabled value = "0.00">
+                </div>
+                <label>Deep Wounds</label>
               </div>
             </div>
           </div>
