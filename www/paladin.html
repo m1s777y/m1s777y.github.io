@@ -4,72 +4,239 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/calculator.css"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <title>Paladin</title>
 </head>
 <body>
     <div class = "wrapper">
-        <div class = "Header_inner">
-            <div class = "Logo">
-                <a class = "text" href = "../www/index.html" style = "color:#ffffff">SpellCalculator</a>
-            </div>
+      <div class = "header">
+        <a href = "../index.html" style = "color:#ffffff">SpellCalculator</a>
+        <div class = "header-right">
+          <a href = https://xpoff.com/members/m1s777y.46308/ style = "color:#ffffff">Author</a>
+          <a href = "faq.html" style = "color:#ffffff">F.A.Q</a>
         </div>
+      </div>
         <div class = "main_block">
-            <p style = "color:#ffffff">
-              Example
+            <p style = "color:#ffffff; margin-top: 1%;" class = "info_block">
+              The paladin (often shortened to "pala" or "pally" by players) is a holy knight, a hybrid class with the ability to play a variety of different roles — healing (holy), tanking (protection), and DPS (retribution). 
+              The Paladins stand directly in front of their enemies, relying on heavy armor and healing in order to survive incoming attacks. 
+              Whether with massive shields or crushing two-handed weapons, Paladins are able to keep claws and swords from their weaker fellows – or they use healing magic to ensure that they remain on their feet.
               </p>
-        </div>
         <div class = "stats_block">
-          <div class = "Input">
-            <div class = "InputField">
-              <label for="AttackPower">AttackPower:</label>
-              <input type = "number" id = "AttackPower" name = "AttackPower" value = "0">
+          <div class = "calculator">
+            <div class = "Input">
+              <div class = "InputField">
+                <label for="Level">Level:</label>
+                <input type = "number" id = "Level" name = "Level" value = "1" min = "1" max = "60" oninput="calculatespells();inputStats(this.id)" onchange="inputStats(this.id)">
+              </div>
+              <div class = "InputField">
+                <label for="AttackPower" id = "APText">Attack Power:</label>
+                <input type = "number" id = "AttackPower" name = "AttackPower" value = "0" min = "0" onchange="calculatespells()" oninput="calculatespells()">
+              </div>
+              <div class = "InputField">
+                <label for="Critical">Critical:</label>
+                <input type = "number" id = "Critical" name = "Critical" value = "0" min = "0" oninput = "inputStats(this.id);calculatespells();">
+              </div>
+              <div class = "InputField">
+                <label for="Haste">Haste:</label>
+                <input type = "number" id = "Haste" name = "Haste" value = "0" min = "0" oninput = "inputStats(this.id);calculatespells();">
+              </div>
+              <div class = "InputField">
+                <label for="Versatility">Versatility:</label>
+                <input type = "number" id = "Versatility" name = "Versatility" value = "0" min = "0" oninput = "inputStats(this.id);calculatespells();">
+              </div>
+              <div class = "InputField">
+                <label for="Mastery">Mastery:</label>
+                <input type = "number" id = "Mastery" name = "Mastery" value = "0" min = "0" oninput = "inputStats(this.id);calculatespells();">
+              </div>
             </div>
-            <div class = "InputField">
-              <label for="Critical">Critical:</label>
-              <input type = "number" id = "Critical" name = "Critical" value = "0">
+            <div class = "Output" style = "text-align: left;">
+              <div class = "selectspec">
+              <select name = "spec" id = "spec" style = "width:120px;" onchange = "selectSpec(this);calculatespells();">
+                <option value selected disabled>Select spec</option>
+                <option value = "paladin-holy">Holy</option>
+                <option value = "paladin-retribution">Retribution</option>
+                <option value = "paladin-protection">Protection</option>
+              </select>
+              <div class = "InputField" style = "text-align: left;">
+                <label for="MHDPS" id = "MHText">MH</label>
+                <input type = "number" id = "MHDPS" name = "MHDPS" value = "0" min = "0" oninput = "calculatespells();">
+              </div>
+              <div class = "InputField" style = "text-align: left;">
+                <input type = "text" id = "CriticalResult" name = "CriticalResult" disabled value = "0.00%"max = "120.00%" onformchange="calculatespells()">
+              </div>
+              <div class = "InputField" style = "text-align: left;">
+                <input type = "text" id = "HasteResult" name = "HasteResult" disabled value = "0.00%" onchange="calculatespells()">
+              </div>
+              <div class = "InputField" style = "text-align: left;">
+                <input type = "text" id = "VersatilityResult" name = "VersatilityResult" disabled value = "0.00%" onchange="calculatespells()">
+              </div>
+              <div class = "InputField" style = "text-align: left;">
+                <input type = "text" id = "MasteryResult" name = "MasteryResult" disabled value = "0.00%" onchange="calculatespells()">
+              </div>
+            </div> 
+          </div>
+          </div>
+          <div class = "spell_block">
+            <div class = "base_spec borderbetween">
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/crusaderstrike.webp" alt = "crusader strike"/>
+                  <input type = "text" id = "crusader strike" name = "crusader strike" disabled value = "0.00">
+                </div>
+                <label>Crusader Strike</label>
+              </div>
+              
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/shield of the righteous.jpg" alt = "shield of the righteous"/>
+                  <input type = "text" id = "shield of the righteous" name = "shield of the righteous" disabled value = "0.00">
+                </div>
+                <label>Shield of the Righteous</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/judgment.jpg" alt = "judgment"/>
+                  <input type = "text" id = "judgment" name = "judgment" disabled value = "0.00">
+                </div>
+                <label>Judgement</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/flashheal.jpg" alt = "flash of light"/>
+                  <input type = "text" id = "flash of light" name = "flash of light" disabled value = "0.00">
+                </div>
+                <label>Flash of Light</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/consecration.jpg" alt = "consecration"/>
+                  <input type = "text" id = "consecration" name = "consecration" disabled value = "0.00">
+                </div>
+                <label>Consecration</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/word of glory.jpg" alt = "word of glory"/>
+                  <input type = "text" id = "word of glory" name = "word of glory" disabled value = "0.00">
+                </div>
+                <label>Word of Glory</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/paladin/hammerofwrath.jpg" alt = "hammer of wrath"/>
+                  <input type = "text" id = "hammer of wrath" name = "hammer of wrath" disabled value = "0.00">
+                </div>
+                <label>Hammer of Wrath</label>
+              </div>
+              
+              
+            <div class = "base_spec warrior-arms borderbetween">
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/mortal strike.webp" alt = "mortal strike"/>
+                  <input type = "text" id = "mortal strike" name = "mortal strike" disabled value = "0.00">
+                </div>
+                <label>Mortal Strike</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/mastery arms.webp" alt = "mastery_arms"/>
+                  <input type = "text" id = "mastery_arms" name = "mastery_arms" disabled value = "0.00">
+                </div>
+                <label style = "font-size: 12px;">Mastery: Deep Wounds</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/overpower.webp" alt = "overpower"/>
+                  <input type = "text" id = "overpower" name = "overpower" disabled value = "0.00">
+                </div>
+                <label>Overpower</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/colossus smash.webp" alt = "colossus smash"/>
+                  <input type = "text" id = "colossus smash" name = "colossus smash" disabled value = "0.00">
+                </div>
+                <label>Colossus Smash</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/bladestorm.webp" alt = "bladestorm"/>
+                  <input type = "text" id = "bladestorm" name = "bladestorm" disabled value = "0.00">
+                </div>
+                <label>Bladestorm</label>
+              </div>
+              
             </div>
-            <div class = "InputField">
-              <label for="Haste">Haste:</label>
-              <input type = "number" id = "Haste" name = "Haste" value = "0">
+            <div class = "base_spec warrior-fury borderbetween">
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/bloodthirst.webp" alt = "bloodthirst"/>
+                  <input type = "text" id = "bloodthirst" name = "bloodthirst" disabled value = "0.00">
+                </div>
+                <label>Bloodthirst</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/raging blow.webp" alt = "raging blow"/>
+                  <input type = "text" id = "raging blow" name = "raging blow" disabled value = "0.00">
+                </div>
+                <label>Raging Blow</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/rampage.webp" alt = "rampage"/>
+                  <input type = "text" id = "rampage" name = "rampage" disabled value = "0.00">
+                </div>
+                <label>Rampage</label>
+              </div>  
             </div>
-            <div class = "InputField">
-              <label for="Versatility">Versatility:</label>
-              <input type = "number" id = "Versatility" name = "Versatility" value = "0">
-            </div>
-            <div class = "InputField">
-              <label for="Mastery">Mastery:</label>
-              <input type = "number" id = "Mastery" name = "Mastery" value = "0">
+            <div class = "base_spec warrior-protection">
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/revenge.webp" alt = "revenge"/>
+                  <input type = "text" id = "revenge" name = "revenge" disabled value = "0.00">
+                </div>
+                <label>Revenge</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/devastate.webp" alt = "devastate"/>
+                  <input type = "text" id = "devastate" name = "devastate" disabled value = "0.00">
+                </div>
+                <label>Devastate</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/thunder clap.webp" alt = "thunder clap"/>
+                  <input type = "text" id = "thunder clap" name = "thunder clap" disabled value = "0.00">
+                </div>
+                <label>Thunder Clap</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/shockwave.webp" alt = "shockwave"/>
+                  <input type = "text" id = "shockwave" name = "shockwave" disabled value = "0.00">
+                </div>
+                <label>Shockwave</label>
+              </div>
+              <div class = "Ability">
+                <div class = "Ability_Damage">
+                  <img src = "../images/warrior/mastery arms.webp" alt = "deepwounds"/>
+                  <input type = "text" id = "deepwounds" name = "deepwounds" disabled value = "0.00">
+                </div>
+                <label>Deep Wounds</label>
+              </div>
             </div>
           </div>
-          <div class = "Output">
-            <select name = "spec" id = "spec">
-              <option value selected disabled>Select spec</option>
-              <option value = "warrior-arms">Arms</option>
-              <option value = "warrior-fury">Fury</option>
-              <option value = "warrior-protection">Protection</option>
-            </select> 
-            <div class = "InputField">
-              <input type = "text" id = "CriticalResult" name = "CriticalResult" disabled value = "10.00%">
-            </div>
-            <div class = "InputField">
-              <input type = "text" id = "HasteResult" name = "HasteResult" disabled value = "0.00%">
-            </div>
-            <div class = "InputField">
-              <input type = "text" id = "VersatilityResult" name = "VersatilityResult" disabled value = "0.00%">
-            </div>
-            <div class = "InputField">
-              <input type = "text" id = "MasteryResult" name = "MasteryResult" disabled value = "0.00%">
-            </div>
-          </div>
-          
-
+        </div>
         </div>
         <noscript>
             Включите жабаскрипт
         </noscript>
-       <footer>
-            <a class = "text" href = https://xpoff.com/members/m1s777y.46308/ style = "color:#ffffff">Author</a>
-       </footer>
-        <script src = "main.js"></script>  
+        <script src = "../js/calculator.js"></script>
+        <script src = "../js/class/paladin.js"></script>  
+        <script type="text/javascript" src="../js/mastery.json"></script>
     </div>

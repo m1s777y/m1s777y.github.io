@@ -18,7 +18,7 @@ const masterycoef = {
   "demonhunter-vengeance": "1.7999999",
   "paladin-holy": "1.5",
   "paladin-retribution": "1.6",
-  "paladin-protectionP": "1",
+  "paladin-protection": "1",
   "rogue-assasination": "1.7",
   "rogue-subtlety": "2.45",
   "rogue-outlaw": "1.45",
