@@ -80,14 +80,13 @@
           </div>
           <div class = "spell_block">
             <div class = "base_spec borderbetween">
-              <div class = "Ability">
+              <div class = "Ability" id = "crusader strike">
                 <div class = "Ability_Damage">
                   <img src = "../images/paladin/crusaderstrike.webp" alt = "crusader strike"/>
                   <input type = "text" id = "crusader strike" name = "crusader strike" disabled value = "0.00">
                 </div>
                 <label>Crusader Strike</label>
               </div>
-              
               <div class = "Ability">
                 <div class = "Ability_Damage">
                   <img src = "../images/paladin/shield of the righteous.jpg" alt = "shield of the righteous"/>
@@ -130,105 +129,103 @@
                 </div>
                 <label>Hammer of Wrath</label>
               </div>
-              
-              
-            <div class = "base_spec warrior-arms borderbetween">
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/mortal strike.webp" alt = "mortal strike"/>
-                  <input type = "text" id = "mortal strike" name = "mortal strike" disabled value = "0.00">
-                </div>
-                <label>Mortal Strike</label>
+          </div>
+          <div class = "base_spec paladin-holy borderbetween">
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/paladin/holy shock.jpg" alt = "holy shock"/>
+                <input type = "text" id = "holy shock" name = "holy shockD" disabled value = "0.00" style = "color:red">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/mastery arms.webp" alt = "mastery_arms"/>
-                  <input type = "text" id = "mastery_arms" name = "mastery_arms" disabled value = "0.00">
-                </div>
-                <label style = "font-size: 12px;">Mastery: Deep Wounds</label>
-              </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/overpower.webp" alt = "overpower"/>
-                  <input type = "text" id = "overpower" name = "overpower" disabled value = "0.00">
-                </div>
-                <label>Overpower</label>
-              </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/colossus smash.webp" alt = "colossus smash"/>
-                  <input type = "text" id = "colossus smash" name = "colossus smash" disabled value = "0.00">
-                </div>
-                <label>Colossus Smash</label>
-              </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/bladestorm.webp" alt = "bladestorm"/>
-                  <input type = "text" id = "bladestorm" name = "bladestorm" disabled value = "0.00">
-                </div>
-                <label>Bladestorm</label>
-              </div>
-              
+              <label>Holy Shock</label>
             </div>
-            <div class = "base_spec warrior-fury borderbetween">
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/bloodthirst.webp" alt = "bloodthirst"/>
-                  <input type = "text" id = "bloodthirst" name = "bloodthirst" disabled value = "0.00">
-                </div>
-                <label>Bloodthirst</label>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/paladin/holy shock.jpg" alt = "holy shock"/>
+                <input type = "text" id = "holy shock" name = "holy shockH" disabled value = "0.00" style = "color:rgb(0, 160, 0)">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/raging blow.webp" alt = "raging blow"/>
-                  <input type = "text" id = "raging blow" name = "raging blow" disabled value = "0.00">
-                </div>
-                <label>Raging Blow</label>
-              </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/rampage.webp" alt = "rampage"/>
-                  <input type = "text" id = "rampage" name = "rampage" disabled value = "0.00">
-                </div>
-                <label>Rampage</label>
-              </div>  
+              <label>Holy Shock</label>
             </div>
-            <div class = "base_spec warrior-protection">
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/revenge.webp" alt = "revenge"/>
-                  <input type = "text" id = "revenge" name = "revenge" disabled value = "0.00">
-                </div>
-                <label>Revenge</label>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/paladin/holy light.jpg" alt = "holy light"/>
+                <input type = "text" id = "holy light" name = "holy light" disabled value = "0.00">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/devastate.webp" alt = "devastate"/>
-                  <input type = "text" id = "devastate" name = "devastate" disabled value = "0.00">
-                </div>
-                <label>Devastate</label>
+              <label>Holy Light</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/paladin/light of the martyr.jpg" alt = "light of the martyr"/>
+                <input type = "text" id = "light of the martyr" name = "light of the martyr" disabled value = "0.00">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/thunder clap.webp" alt = "thunder clap"/>
-                  <input type = "text" id = "thunder clap" name = "thunder clap" disabled value = "0.00">
-                </div>
-                <label>Thunder Clap</label>
+              <label>Light Of The Martyr</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/paladin/light of dawn.jpg" alt = "light of dawn"/>
+                <input type = "text" id = "light of dawn" name = "light of dawn" disabled value = "0.00">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/shockwave.webp" alt = "shockwave"/>
-                  <input type = "text" id = "shockwave" name = "shockwave" disabled value = "0.00">
-                </div>
-                <label>Shockwave</label>
+              <label>Light of Dawn</label>
+            </div>
+            
+          </div>
+          <div class = "base_spec paladin-retribution borderbetween">
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/bloodthirst.webp" alt = "bloodthirst"/>
+                <input type = "text" id = "bloodthirst" name = "bloodthirst" disabled value = "0.00">
               </div>
-              <div class = "Ability">
-                <div class = "Ability_Damage">
-                  <img src = "../images/warrior/mastery arms.webp" alt = "deepwounds"/>
-                  <input type = "text" id = "deepwounds" name = "deepwounds" disabled value = "0.00">
-                </div>
-                <label>Deep Wounds</label>
+              <label>Bloodthirst</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/raging blow.webp" alt = "raging blow"/>
+                <input type = "text" id = "raging blow" name = "raging blow" disabled value = "0.00">
               </div>
+              <label>Raging Blow</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/rampage.webp" alt = "rampage"/>
+                <input type = "text" id = "rampage" name = "rampage" disabled value = "0.00">
+              </div>
+              <label>Rampage</label>
+            </div>  
+          </div>
+          <div class = "base_spec paladin-protection borderbetween">
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/revenge.webp" alt = "revenge"/>
+                <input type = "text" id = "revenge" name = "revenge" disabled value = "0.00">
+              </div>
+              <label>Revenge</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/devastate.webp" alt = "devastate"/>
+                <input type = "text" id = "devastate" name = "devastate" disabled value = "0.00">
+              </div>
+              <label>Devastate</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/thunder clap.webp" alt = "thunder clap"/>
+                <input type = "text" id = "thunder clap" name = "thunder clap" disabled value = "0.00">
+              </div>
+              <label>Thunder Clap</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/shockwave.webp" alt = "shockwave"/>
+                <input type = "text" id = "shockwave" name = "shockwave" disabled value = "0.00">
+              </div>
+              <label>Shockwave</label>
+            </div>
+            <div class = "Ability">
+              <div class = "Ability_Damage">
+                <img src = "../images/warrior/mastery arms.webp" alt = "deepwounds"/>
+                <input type = "text" id = "deepwounds" name = "deepwounds" disabled value = "0.00">
+              </div>
+              <label>Deep Wounds</label>
             </div>
           </div>
         </div>
