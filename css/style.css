@@ -25,7 +25,7 @@
 /* главный враппер епт*/ 
 .wrapper
 {
-    background-size: cover;
+    background-size: contain;
     background-position: 50%;
     background-attachment: fixed;
     background-image: url("../images/background4k.jpg");
