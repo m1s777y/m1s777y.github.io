@@ -119,39 +119,32 @@ let RatioAvoidance = [
                         4.712459623, 5.202795655, 5.744151632, 6.341836227, 7.001710488, 7.730245312, 8.534584897, 9.422616802, 10.4030493, 14.00000004 
                       ];
 let mastery = "";
-function selectSpec(e)
-{
+function selectSpec(e){
   document.getElementsByClassName("spell_block")[0].style.display = "flex";
   //let el = document.getElementsByClassName("Input")[0].classList.add("borderbetween");
   document.getElementsByClassName("calculator")[0].style.maxWidth = "420px";
   document.getElementsByClassName("calculator")[0].style.minheight = "300px";
   mastery = e.value;
   el = document.getElementsByClassName('InputField');    
-  for(let i = 0 ; i < el.length;i++)
-  {
+  for(let i = 0 ; i < el.length;i++){
     el[i].style.display = "block"
   }
   el = document.getElementsByClassName("base_spec");
-  for(let i = 1 ; i < el.length; i++)
-  {
-    if(el[i].className == "base_spec " + mastery + " borderbetween" || el[i].className == "base_spec " + mastery)
-    {
+  for(let i = 1 ; i < el.length; i++){
+    if(el[i].className == "base_spec " + mastery + " borderbetween" || el[i].className == "base_spec " + mastery){
       el[i].style.display = "flex";
       el[i].classList.remove("borderbetween");
     }
-    else
-    {
+    else {
       el[i].style.display = "none";
     }
   }
   document.getElementById("MasteryResult").value = (8.00*masterycoef[mastery]).toFixed(2) + "%";   
   document.getElementById("CriticalResult").value = parseInt(bonuscritical[mastery]).toFixed(2) + "%";  
 }
-function inputStats(id)
-{
+function inputStats(id){
   var stat = Number(document.getElementById(id).value);
-  if(id == "Level")
-  {
+  if(id == "Level"){
     inputStats('Versatility');
     inputStats('Critical');
     inputStats('Haste');
