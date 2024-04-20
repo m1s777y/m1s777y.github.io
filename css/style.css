@@ -3,48 +3,55 @@
     padding: 0;
     transition: 0.25s;
     position: relative;
-    font-family:'Roboto Mono';
+    font-family:'Roboto';
     box-sizing: border-box;
-  }
-  .header {
-    overflow: hidden;
-    background-color: #242424;
-    padding: 20px 10px;
-    font-size: 32px;
-  }
-  .header-right {
-    float: right;
-  }
-  .header a:hover {
-    background-color: #484848;
-    color: black;
   }
 .main{
   margin-top: 2%;
 }
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+header > button {
+  background-color: #181818;
+  padding: 10px 0px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  border: 1px solid #555;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  height: 50px;
+}
 /* главный враппер епт*/ 
-.wrapper
+body
 {
     background-size: contain;
     background-position: 50%;
     background-attachment: fixed;
-    background-image: url("../images/background4k.jpg");
-    background-repeat:no-repeat;
+    background-image: url("../images/TWWAlphaHallowfall002.webp");
+    background-size: cover;
     min-height: 100vh;
     width: 100%;
     position: relative;
     
 }
-
 /* верхняя кнопка спеков без анимации */
 .nav-classes-button
 {
-    font-size:18px;
-    opacity:.5;
-    background-color:#a5a5a5;
+    opacity: .75;
+    background-color:#242424;
     margin: 1% 0.5%;
     height: fit-content;
-    width: 13vh;
+    width: 13vw;
     border-radius: 10px;
     
     text-align: center;
@@ -65,11 +72,11 @@
 /*инфа о сайте*/
 .info_block
 {
-  text-align: justify;
-    font-size:large;
+    font-size: 14px;
+    text-align: justify;
     margin:auto;
-    background-color: #8a8a8a;
-    width:600px;
+    background-color: #242424;
+    max-width: 600px;
     border-radius: 10px;
     opacity:.93;
     word-wrap: break-word;
@@ -88,11 +95,6 @@
   flex-direction: column;
   justify-content: center;
 
-}
-.class
-{
-  font-weight: bold;
-  -webkit-text-stroke: 1.1px black;
 }
 
 
@@ -114,26 +116,4 @@ footer
     bottom: 0;
     text-align:left;
     text-decoration: none;
-}
-
-@media screen and (max-width: 1200px) {
-  .main_block{
-    justify-content: center;
-  }
-}
-@media screen and (max-width:620px){
-  .info_block
-{
-    width:90%;
-}
-}
-@media screen and (max-width: 400px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: center;
-  }
-  .header-right {
-    float: none;
-  }
 }
