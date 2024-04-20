@@ -119,28 +119,38 @@ let RatioAvoidance = [
                         4.712459623, 5.202795655, 5.744151632, 6.341836227, 7.001710488, 7.730245312, 8.534584897, 9.422616802, 10.4030493, 14.00000004 
                       ];
 let mastery = "";
+function setter(id,value)
+{
+  var curr = document.getElementById(id);
+  curr.setAttribute("value", value);
+  curr.innerHTML = value;
+}
+function selectClass(e)
+{
+  document.getElementById("spec").removeAttribute("disabled");
+  document.getElementById("spec").selectedIndex = 0;
+  console.log(e.innerHTML);
+  switch(e.innerHTML) {
+    case 'Druid':
+      document.getElementById("spec4").removeAttribute("hidden");
+      setter("spec4","Restoration");
+      setter("spec1","Balance");
+      setter("spec2","Feral");
+      setter("spec3","Guardian");
+      break;
+    case 'Warrior':
+      document.getElementById("spec4").setAttribute("hidden", true);;
+      setter("spec1","Arms");
+      setter("spec2","Fury");
+      setter("spec3","Protection");
+  }
+
+
+
+}
 function selectSpec(e){
-  document.getElementsByClassName("spell_block")[0].style.display = "flex";
-  //let el = document.getElementsByClassName("Input")[0].classList.add("borderbetween");
-  document.getElementsByClassName("calculator")[0].style.maxWidth = "420px";
-  document.getElementsByClassName("calculator")[0].style.minheight = "300px";
-  mastery = e.value;
-  el = document.getElementsByClassName('InputField');    
-  for(let i = 0 ; i < el.length;i++){
-    el[i].style.display = "block"
-  }
-  el = document.getElementsByClassName("base_spec");
-  for(let i = 1 ; i < el.length; i++){
-    if(el[i].className == "base_spec " + mastery + " borderbetween" || el[i].className == "base_spec " + mastery){
-      el[i].style.display = "flex";
-      el[i].classList.remove("borderbetween");
-    }
-    else {
-      el[i].style.display = "none";
-    }
-  }
-  document.getElementById("MasteryResult").value = (8.00*masterycoef[mastery]).toFixed(2) + "%";   
-  document.getElementById("CriticalResult").value = parseInt(bonuscritical[mastery]).toFixed(2) + "%";  
+  console.log(e.value);
+  
 }
 function inputStats(id){
   var stat = Number(document.getElementById(id).value);

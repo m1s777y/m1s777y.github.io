@@ -33,8 +33,6 @@ header > button {
 /* главный враппер епт*/ 
 body
 {
-    background-size: contain;
-    background-position: 50%;
     background-attachment: fixed;
     background-image: url("../images/TWWAlphaHallowfall002.webp");
     background-size: cover;
@@ -46,13 +44,13 @@ body
 /* верхняя кнопка спеков без анимации */
 .nav-classes-button
 {
-    opacity: .75;
+    opacity: .85;
     background-color:#181818;
     margin: 1% 0%;
     width: 100%;
     max-width:100px;
-    border-radius: 10px;
     text-align: center;
+    border: 1px solid #555;
 }
 .nav-classes-button:hover
 {

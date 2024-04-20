@@ -9,17 +9,23 @@ img
   height: 32px;
 }
 
-
+.spec
+{
+  width:100%;
+  margin: 5px;
+  color:#ffffff;
+  background-color: #181818;
+}
 
 .calculator
 {
     display: flex;
-    background-color: #8a8a8a;
+    background-color: #181818;
     width:30%;
     max-width: 138px; /* 420px */
-    margin:3% 0% 0% 5%;
+    margin:auto;
     border-radius: 10px;
-    min-height: 50px; /* 300px */
+    min-height: 25px; /* 300px */
     height: 80%;
 }
 .InputField
@@ -40,21 +46,6 @@ img
   width:25%;
   height: 38px;
 }
-.Output
-{
-  padding:0px 10px;
-}
-.Output select {
-  flex: 1 1;
-  background-color: #d3d3d3;
-  border: 1px solid #242424;
-  font-size: 14px;
-  width:100px;
-  margin: 5px 0px 0px 0px;
-  padding: 10px;
-  border-radius: 10px;
-}
-
 
 
 .spell_block

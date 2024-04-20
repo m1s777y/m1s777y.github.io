@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/calculator.css"/>
     <title>SpellCalculator</title>
 </head>
 <body>
@@ -22,44 +23,59 @@
                 When hovering over an ability, you can find out how it was considered and how calculated DPS<br>
             </p> 
         <nav class = "nav-classes">
-            <a class = "nav-classes-button" href = "/www/warrior.html">
-              <p class = "class" style = "color:#c69b6d">Warrior</p>
+            <a class = "nav-classes-button" >
+              <p id = "class" onclick = "selectClass(this)" style = "color:#c69b6d" >Warrior</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/paladin.html">
-              <p class = "class" style = "color:#f48cba">Paladin</p>
+            <a class = "nav-classes-button" >
+              <p id = "class" onclick = "selectClass(this)" style = "color:#f48cba">Paladin</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/hunter.html">
-              <p class = "class" style = "color:#aad372">Hunter</p>
+            <a class = "nav-classes-button" >
+              <p id = "class" onclick = "selectClass(this)" style = "color:#aad372">Hunter</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/rogue.html">
-              <p class = "class" style = "color:#fff468">Rogue</p>
+            <a class = "nav-classes-button" >
+              <p id = "class" onclick = "selectClass(this)" style = "color:#fff468">Rogue</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/priest.html">
-              <p class = "class" style = "color:#f0ebe0">Priest</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#f0ebe0">Priest</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/shaman.html">
-              <p class = "class" style = "color:#2359ff">Shaman</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#2359ff">Shaman</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/mage.html">
-              <p class = "class" style = "color:#68ccef">Mage</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#68ccef">Mage</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/warlock.html">
-              <p class = "class" style = "color:#9382c9">Warlock</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#9382c9">Warlock</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/monk.html">
-              <p class = "class" style = "color:#00ffba">Monk</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#00ffba">Monk</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/druid.html">
-              <p class = "class" style = "color:#ff7c0a">Druid</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#ff7c0a">Druid</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/demonhunter.html">
-              <p class = "class" style = "color:#a330c9">Demon Hunter</p>
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#a330c9">Demon Hunter</p>
             </a>
-            <a class = "nav-classes-button" href = "/www/deathknight.html">
-              <p class = "class" style = "color:#c41e3b">Death Knight</p>          
+            <a class = "nav-classes-button" >
+              <p class = "class" onclick = "selectClass(this)" style = "color:#c41e3b">Death Knight</p>          
             </a>
         </nav>
+        <div class = "stats_block">
+          <div class = "calculator">
+            <select disabled class = "spec" id = "spec" onchange = "selectSpec(this);">
+              <option selected disabled>Select spec</option>
+              <option id = "spec1"  value = ""></option>
+              <option id = "spec2"  value = ""></option>
+              <option id = "spec3"  value = ""></option>
+              <option id = "spec4" hidden value = ""></option>
+            </select>
+          </div>
+          <div class = "spell_block">
+
+          </div>
         </div>
+        </div>
+        <script src = "../js/calculator.js"></script>
         <noscript>
             Включите жабаскрипт
         </noscript>
