@@ -5,15 +5,15 @@
     position: relative;
     font-family:'Roboto';
     box-sizing: border-box;
+    font-size:14px;
   }
 .main{
-  margin-top: 2%;
+  margin-top: 2vh;
 }
 header {
   display: flex;
   justify-content: center;
-  align-items: center;
-  max-width: 800px;
+  max-width: 675px;
   width: 100%;
   margin: 0 auto;
 }
@@ -28,7 +28,6 @@ header > button {
   width: 100%;
   text-decoration: none;
   color: white;
-  font-size: 14px;
   height: 50px;
 }
 /* главный враппер епт*/ 
@@ -48,12 +47,11 @@ body
 .nav-classes-button
 {
     opacity: .75;
-    background-color:#242424;
-    margin: 1% 0.5%;
-    height: fit-content;
-    width: 13vw;
+    background-color:#181818;
+    margin: 1% 0%;
+    width: 100%;
+    max-width:100px;
     border-radius: 10px;
-    
     text-align: center;
 }
 .nav-classes-button:hover
@@ -62,9 +60,12 @@ body
 }
 .nav-classes
 {
+    margin:auto;
+    width:100%;
+    max-width:675px;
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap:wrap;
 }
 
@@ -72,16 +73,19 @@ body
 /*инфа о сайте*/
 .info_block
 {
+    
     font-size: 14px;
     text-align: justify;
     margin:auto;
-    background-color: #242424;
-    max-width: 600px;
+    background-color: #181818;
+    max-width: 675px;
     border-radius: 10px;
     opacity:.93;
     word-wrap: break-word;
     order:-1;
     padding:1%;
+    margin-top: 0;
+    margin-bottom:1vh;
 }
 
 :hover
