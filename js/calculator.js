@@ -119,37 +119,98 @@ let RatioAvoidance = [
                         4.712459623, 5.202795655, 5.744151632, 6.341836227, 7.001710488, 7.730245312, 8.534584897, 9.422616802, 10.4030493, 14.00000004 
                       ];
 let mastery = "";
-function setter(id,value)
+function setter(id,value,className)
 {
   var curr = document.getElementById(id);
   curr.setAttribute("value", value);
+  curr.setAttribute("class", className);
   curr.innerHTML = value;
 }
 function selectClass(e)
 {
-  document.getElementById("spec").removeAttribute("disabled");
-  document.getElementById("spec").selectedIndex = 0;
+  document.getElementById("spec").style.opacity=1;
+  document.getElementsByClassName("calculator")[0].style.opacity=1;
+  document.getElementById("spec4").setAttribute("hidden", true); // после дру
+  document.getElementById("spec3").removeAttribute("hidden"); // после дх
+  document.getElementById("spec").removeAttribute("disabled"); //чтобы можно было выбрать
+  document.getElementById("spec").selectedIndex = 0; // для обнуления выбора
   console.log(e.innerHTML);
   switch(e.innerHTML) {
+    case 'Warrior':
+      setter("spec1","Arms","Warrior");
+      setter("spec2","Fury","Warrior");
+      setter("spec3","Protection","Warrior");
+      break;
+    case 'Paladin':
+      setter("spec1","Holy","Paladin");
+      setter("spec2","Protection","Paladin");
+      setter("spec3","Retribution","Paladin");
+      break;
+    case 'Hunter':
+      setter("spec1","Beast Mastery","Hunter");
+      setter("spec2","Marksmanship","Hunter");
+      setter("spec3","Survival","Hunter");
+      break;
+    case 'Rogue':
+      setter("spec1","Assassination","Rogue");
+      setter("spec2","Outlaw","Rogue");
+      setter("spec3","Subtlety","Rogue");
+      break;
+    case 'Priest':
+      setter("spec1","Discipline","Priest");
+      setter("spec2","Holy","Priest");
+      setter("spec3","Shadow","Priest");
+      break;
+    case 'Shaman':
+      setter("spec1","Elemental","Shaman");
+      setter("spec2","Enhancement","Shaman");
+      setter("spec3","Restoration","Shaman");
+      break;
+    case 'Mage':
+      setter("spec1","Arcane","Mage");
+      setter("spec2","Fire","Mage");
+      setter("spec3","Frost","Mage");
+      break;
+    case 'Warlock':
+      setter("spec1","Affliction","Warlock");
+      setter("spec2","Demonology","Warlock");
+      setter("spec3","Destruction","Warlock");
+      break;
+    case 'Monk':
+      setter("spec1","Brewmaster","Monk");
+      setter("spec2","Mistweaver","Monk");
+      setter("spec3","Windwalker","Monk");
+      break;
     case 'Druid':
       document.getElementById("spec4").removeAttribute("hidden");
-      setter("spec4","Restoration");
-      setter("spec1","Balance");
-      setter("spec2","Feral");
-      setter("spec3","Guardian");
+      setter("spec4","Restoration","Druid");
+      setter("spec1","Balance","Druid");
+      setter("spec2","Feral","Druid");
+      setter("spec3","Guardian","Druid");
       break;
-    case 'Warrior':
-      document.getElementById("spec4").setAttribute("hidden", true);;
-      setter("spec1","Arms");
-      setter("spec2","Fury");
-      setter("spec3","Protection");
+    case 'Demon Hunter':
+      setter("spec1","Havoc","Demon Hunter");
+      setter("spec2","Vengeance","Demon Hunter");
+      document.getElementById("spec3").setAttribute("hidden", true);
+      break;
+    case 'Death Knight':
+      setter("spec1","Blood","Death Knight");
+      setter("spec2","Frost","Death Knight");
+      setter("spec3","Unholy","Death Knight");
+      break;
+    case 'Evoker':
+      setter("spec1","Devastation","Evoker");
+      setter("spec2","Preservation","Evoker");
+      setter("spec3","Augmentation","Evoker");
+      break;
+    
   }
 
 
 
 }
-function selectSpec(e){
-  console.log(e.value);
+function selectSpec(e,className){
+  console.log(e.value,className);
   
 }
 function inputStats(id){

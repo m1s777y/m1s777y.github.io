@@ -36,6 +36,8 @@ body
     background-attachment: fixed;
     background-image: url("../images/TWWAlphaHallowfall002.webp");
     background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -65,6 +67,7 @@ body
     text-align: center;
     justify-content: center;
     flex-wrap:wrap;
+    margin-bottom: 5px;
 }
 
 
@@ -99,7 +102,12 @@ body
 
 }
 
-
+.nav-classes-button:active { 
+  transform: scale(0.98); 
+  /* Scaling button to 0.98 to its original size */ 
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+  /* Lowering the shadow */ 
+} 
 /* tag a*/
 a
 {
