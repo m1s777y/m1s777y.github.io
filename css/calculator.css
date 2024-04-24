@@ -1,7 +1,11 @@
 .stats_block
 {
   display:flex;
-  justify-content:space-around;
+  justify-content:space-evenly;
+  height:600px;
+  width:1250px;
+  text-align: center;
+  margin: auto;
 }
 img
 {
@@ -29,6 +33,7 @@ img
     min-height: 25px; /* 300px */
     height: 80%;
     opacity: 0;
+    margin-bottom: 1%;
 }
 .InputField
 {
@@ -50,16 +55,6 @@ img
 }
 
 
-.spell_block
-{
-  display:none;
-  margin:3% 6% 0% 3%;
-  width:470px;
-  background-color:#8a8a8a;
-  order:1;
-  height: min-content;
-  border-radius: 10px;
-}
 .borderbetween
 {
   border-right:1px solid #000000;

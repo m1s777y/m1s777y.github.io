@@ -63,8 +63,7 @@
               <p class = "class" onclick = "selectClass(this)" style = "color:#33937F">Evoker</p>          
             </a>
         </nav>
-        <div class = "stats_block">
-          <div class = "calculator">
+        <div class = "calculator">
             <select disabled  class = "spec" id = "spec" onchange =  "selectSpec(this,document.getElementById('spec1').classList.value);">
               <option selected disabled >Select spec</option>
               <option id = "spec1"  value = "" ></option>
@@ -73,9 +72,13 @@
               <option id = "spec4" hidden value = ""></option>
             </select>
           </div>
-          <div class = "spell_block">
+        <div class = "stats_block">
+            <div class = "class_talent">
 
-          </div>
+            </div>
+            <div class = "spec_talent">
+
+            </div>
         </div>
         </div>
         <script src = "../js/calculator.js"></script>
